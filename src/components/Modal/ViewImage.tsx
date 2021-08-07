@@ -3,7 +3,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalFooter,
-  ModalBody,
   Image,
   Link,
 } from '@chakra-ui/react';
@@ -22,12 +21,15 @@ export function ModalViewImage({
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
-        <ModalBody width="900px" height="600px">
-          <Image src={imgUrl} />
-        </ModalBody>
+      <ModalContent bg="gray.600" maxH="600px" maxW="900px">
+        <Image src={imgUrl} borderTopRadius="md" />
 
-        <ModalFooter>
+        <ModalFooter
+          bgColor="pGray.800"
+          display="flex"
+          justifyContent="left"
+          borderBottomRadius="md"
+        >
           <Link href={imgUrl}> Abrir original </Link>
         </ModalFooter>
       </ModalContent>
